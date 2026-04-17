@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "412273011623",
+    "project_id": "taller2-c9cb0",
+    "storage_bucket": "taller2-c9cb0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412273011623:android:ab15c36d0e980161d02482",
+        "android_client_info": {
+          "package_name": "com.example.taller2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVkYApLiJZ_6-I1wy9teBesqX_rrwUo7Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
