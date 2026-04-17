@@ -1,4 +1,4 @@
-package com.example.taller2.data.model
+package com.example.taller2.model
 
 data class Player(
     var name: String = "",

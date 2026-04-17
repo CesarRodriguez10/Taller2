@@ -1,4 +1,4 @@
-package com.example.taller2.data.model
+package com.example.taller2.model
 
 data class GameState(
     var currentMoney: Int = 1000,
