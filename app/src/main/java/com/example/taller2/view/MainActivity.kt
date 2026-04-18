@@ -21,4 +21,21 @@ class MainActivity : AppCompatActivity() {
             binding.txtMoney.text = "Dinero: ${state.currentMoney}"
             binding.txtTurn.text = "Turno: ${state.currentTurn}"
             binding.txtResult.text = state.result
-        }}}
+        }
+        binding.btnAhorrar.setOnClickListener {
+            viewModel.action("ahorrar")
+        }
+
+        binding.btnInvertir.setOnClickListener {
+            viewModel.action("invertir")
+        }
+
+        binding.btnGastar.setOnClickListener {
+            viewModel.action("gastar")
+        }
+
+        binding.btnReset.setOnClickListener {
+            viewModel.resetGame()
+        }
+    }
+}
