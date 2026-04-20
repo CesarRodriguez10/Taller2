@@ -17,8 +17,10 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val goal = intent.getIntExtra("goal", 5000)
         viewModel.gameState.value?.goal = goal
+
         viewModel.gameState.observe(this) { state ->
             binding.txtMoney.text = "Money: ${state.currentMoney}"
             binding.txtTurn.text = "Turn: ${state.currentTurn}"
@@ -36,24 +38,24 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnAhorrar.setOnClickListener {
-            viewModel.action("Save")
+            viewModel.action("ahorrar") // ⚠️ NO cambiar (rompe lógica si lo haces)
         }
 
         binding.btnInvertir.setOnClickListener {
-            viewModel.action("Invest")
+            viewModel.action("invertir")
         }
 
         binding.btnGastar.setOnClickListener {
-            viewModel.action("Spend")
+            viewModel.action("gastar")
         }
 
         binding.btnReset.setOnClickListener {
             viewModel.resetGame()
         }
+
         binding.btnBack.setOnClickListener {
             startActivity(Intent(this, MetaActivity::class.java))
             finish()
         }
-
     }
 }
