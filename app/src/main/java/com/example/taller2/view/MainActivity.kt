@@ -5,6 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.taller2.databinding.ActivityMainBinding
 import com.example.taller2.viewmodel.GameViewModel
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,12 +17,22 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val goal = intent.getIntExtra("goal", 5000)
+        viewModel.gameState.value?.goal = goal
         viewModel.gameState.observe(this) { state ->
             binding.txtMoney.text = "Dinero: ${state.currentMoney}"
             binding.txtTurn.text = "Turno: ${state.currentTurn}"
             binding.txtResult.text = state.result
+
+            if (state.isGameOver) {
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("money", state.currentMoney)
+                intent.putExtra("goal", state.goal)
+                startActivity(intent)
+                finish()
+            }
         }
+
         binding.btnAhorrar.setOnClickListener {
             viewModel.action("ahorrar")
         }
@@ -37,5 +48,6 @@ class MainActivity : AppCompatActivity() {
         binding.btnReset.setOnClickListener {
             viewModel.resetGame()
         }
+
     }
 }
