@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="ELIGE TU META 🎯"
+        android:text="CHOOSE YOUR GOAL 🎯"
         android:textSize="22sp"
         android:textColor="#FFFFFF"
         android:layout_marginBottom="20dp"
@@ -15,27 +15,27 @@
 
     <Button
         android:id="@+id/btnFacil"
-        android:text="Meta Fácil - $3,000"
+        android:text="EASY - $3,000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btnNormal"
-        android:text="Meta Normal - $5,000"
+        android:text="NORMAL - $5,000"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btnDificil"
-        android:text="Meta Difícil - $10,000"
+        android:text="HARD - $10,000"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btnStart"
-        android:text="Comenzar Partida"
+        android:text="START GAME"
         android:backgroundTint="#FFD60A"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"

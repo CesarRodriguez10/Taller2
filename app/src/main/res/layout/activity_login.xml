@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="TÍO RICO"
+        android:text="RICH UNCLE"
         android:textSize="32sp"
         android:textColor="#FFD60A"
         android:textStyle="bold"
@@ -18,14 +18,14 @@
 
     <EditText
         android:id="@+id/etUser"
-        android:hint="Usuario o correo"
+        android:hint="User/email"
         android:background="#FFFFFF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/etPass"
-        android:hint="Contraseña"
+        android:hint="Password"
         android:background="#FFFFFF"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
@@ -33,7 +33,7 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:text="Iniciar Sesión"
+        android:text="Login"
         android:backgroundTint="#38B000"
         android:textColor="#FFFFFF"
         android:layout_marginTop="20dp"
