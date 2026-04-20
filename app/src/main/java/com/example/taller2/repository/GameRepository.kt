@@ -46,6 +46,16 @@ class GameRepository {
             state.result += "\nGanaste :D"
         }
 
+        state.turnsPlayed++
+
+        if (state.currentMoney > 0) {
+            state.currentStreak++
+            if (state.currentStreak > state.bestStreak) {
+                state.bestStreak = state.currentStreak
+            }
+        } else {
+            state.currentStreak = 0
+        }
         firebase.saveGame(state)
 
         return state
