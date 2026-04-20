@@ -17,17 +17,21 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         val goal = intent.getIntExtra("goal", 5000)
         viewModel.gameState.value?.goal = goal
+
         viewModel.gameState.observe(this) { state ->
-            binding.txtMoney.text = "Dinero: ${state.currentMoney}"
-            binding.txtTurn.text = "Turno: ${state.currentTurn}"
+            binding.txtMoney.text = "Money: ${state.currentMoney}"
+            binding.txtTurn.text = "Turn: ${state.currentTurn}"
             binding.txtResult.text = state.result
 
             if (state.isGameOver) {
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("money", state.currentMoney)
                 intent.putExtra("goal", state.goal)
+                intent.putExtra("turns", state.turnsPlayed)
+                intent.putExtra("streak", state.bestStreak)
                 startActivity(intent)
                 finish()
             }
@@ -49,5 +53,9 @@ class MainActivity : AppCompatActivity() {
             viewModel.resetGame()
         }
 
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, MetaActivity::class.java))
+            finish()
+        }
     }
 }
