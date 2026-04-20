@@ -21,9 +21,9 @@ class ResultActivity : AppCompatActivity() {
         val turns = intent.getIntExtra("turns", 0)
         val streak = intent.getIntExtra("streak", 0)
 
-        binding.txtFinal.text = "Dinero: $money / Meta: $goal"
-        binding.txtTurns.text = "Turnos jugados: $turns"
-        binding.txtStreak.text = "Mejor racha: $streak"
+        binding.txtFinal.text = "Money: $money / Meta: $goal"
+        binding.txtTurns.text = "Turns played: $turns"
+        binding.txtStreak.text = "Best streak: $streak"
 
         binding.btnReplay.setOnClickListener {
             startActivity(Intent(this, MetaActivity::class.java))
