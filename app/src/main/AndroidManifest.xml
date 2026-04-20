@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Taller2">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Taller2">
@@ -22,6 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--META -->
+        <activity android:name=".view.MetaActivity" />
+
+        <!--JUEGO -->
+        <activity android:name=".view.MainActivity" />
+        <!--Resultado-->
+        <activity android:name=".view.ResultActivity"/>
     </application>
 
 </manifest>
