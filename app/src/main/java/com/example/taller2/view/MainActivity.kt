@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         val goal = intent.getIntExtra("goal", 5000)
         viewModel.gameState.value?.goal = goal
         viewModel.gameState.observe(this) { state ->
-            binding.txtMoney.text = "Dinero: ${state.currentMoney}"
-            binding.txtTurn.text = "Turno: ${state.currentTurn}"
+            binding.txtMoney.text = "Money: ${state.currentMoney}"
+            binding.txtTurn.text = "Turn: ${state.currentTurn}"
             binding.txtResult.text = state.result
 
             if (state.isGameOver) {
@@ -36,15 +36,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnAhorrar.setOnClickListener {
-            viewModel.action("ahorrar")
+            viewModel.action("Save")
         }
 
         binding.btnInvertir.setOnClickListener {
-            viewModel.action("invertir")
+            viewModel.action("Invest")
         }
 
         binding.btnGastar.setOnClickListener {
-            viewModel.action("gastar")
+            viewModel.action("Spend")
         }
 
         binding.btnReset.setOnClickListener {
