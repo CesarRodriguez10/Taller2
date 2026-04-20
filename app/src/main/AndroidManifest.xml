@@ -22,11 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- 🎯 META -->
+        <!--META -->
         <activity android:name=".view.MetaActivity" />
 
-        <!-- 🎮 JUEGO -->
+        <!--JUEGO -->
         <activity android:name=".view.MainActivity" />
+        <!--Resultado-->
+        <activity android:name=".view.ResultActivity"/>
     </application>
 
 </manifest>
