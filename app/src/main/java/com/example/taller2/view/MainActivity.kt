@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnAhorrar.setOnClickListener {
-            viewModel.action("ahorrar") // ⚠️ NO cambiar (rompe lógica si lo haces)
+            viewModel.action("ahorrar")
         }
 
         binding.btnInvertir.setOnClickListener {
