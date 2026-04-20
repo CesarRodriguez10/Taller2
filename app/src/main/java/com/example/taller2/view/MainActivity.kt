@@ -50,6 +50,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnReset.setOnClickListener {
             viewModel.resetGame()
         }
+        binding.btnBack.setOnClickListener {
+            startActivity(Intent(this, MetaActivity::class.java))
+            finish()
+        }
 
     }
 }
