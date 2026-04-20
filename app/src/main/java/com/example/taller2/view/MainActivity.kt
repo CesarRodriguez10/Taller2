@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("money", state.currentMoney)
                 intent.putExtra("goal", state.goal)
+                intent.putExtra("turns", state.turnsPlayed)
+                intent.putExtra("streak", state.bestStreak)
                 startActivity(intent)
                 finish()
             }
