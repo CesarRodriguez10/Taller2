@@ -18,11 +18,20 @@ class ResultActivity : AppCompatActivity() {
 
         val money = intent.getIntExtra("money", 0)
         val goal = intent.getIntExtra("goal", 0)
+        val turns = intent.getIntExtra("turns", 0)
+        val streak = intent.getIntExtra("streak", 0)
 
-        binding.txtFinal.text = "Dinero final: $money / Meta: $goal"
+        binding.txtFinal.text = "Dinero: $money / Meta: $goal"
+        binding.txtTurns.text = "Turnos jugados: $turns"
+        binding.txtStreak.text = "Mejor racha: $streak"
 
         binding.btnReplay.setOnClickListener {
             startActivity(Intent(this, MetaActivity::class.java))
+            finish()
+        }
+        binding.btnMenu.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
     }
 }
