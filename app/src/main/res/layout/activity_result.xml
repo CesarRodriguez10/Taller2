@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="🏆 META ALCANZADA"
+        android:text="🏆 GOAL ACHIEVED"
         android:textSize="26sp"
         android:textColor="#FFD60A"
         android:layout_marginBottom="20dp"
@@ -35,7 +35,7 @@
 
     <Button
         android:id="@+id/btnReplay"
-        android:text="Jugar de Nuevo"
+        android:text="PLAY AGAIN"
         android:backgroundTint="#FFD60A"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -43,7 +43,7 @@
 
     <Button
         android:id="@+id/btnMenu"
-        android:text="Volver al menú"
+        android:text="BACK TO MENU"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
