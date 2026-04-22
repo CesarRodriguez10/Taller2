@@ -5,14 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- BACK BUTTON -->
     <Button
         android:id="@+id/btnBack"
         android:text="⬅ Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <!-- PLAYER INFO -->
     <TextView
         android:id="@+id/txtMoney"
         android:text="Money"
@@ -29,7 +27,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <!-- RESULT -->
     <TextView
         android:id="@+id/txtResult"
         android:text="Result"
@@ -37,8 +34,6 @@
         android:layout_marginBottom="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-
-    <!-- ACTION BUTTONS -->
 
     <Button
         android:id="@+id/btnAhorrar"

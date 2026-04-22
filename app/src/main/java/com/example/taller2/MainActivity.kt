@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Recuperar la meta enviada
         val goal = intent.getIntExtra("goal", 5000)
 
         viewModel.gameState.observe(this) { state ->
@@ -28,7 +27,6 @@ class MainActivity : AppCompatActivity() {
             binding.txtResult.text = state.result
         }
 
-        // LÓGICA DEL BOTÓN BACK
         binding.btnBack.setOnClickListener {
             val intent = Intent(this, MetaActivity::class.java)
             startActivity(intent)
