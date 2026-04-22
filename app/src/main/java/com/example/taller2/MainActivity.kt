@@ -1,47 +1,54 @@
 package com.example.taller2
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.taller2.ui.theme.Taller2Theme
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import com.example.taller2.databinding.ActivityMainBinding
+import com.example.taller2.view.MetaActivity
+import com.example.taller2.viewmodel.GameViewModel
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+    private val viewModel: GameViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            Taller2Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Recuperar la meta enviada
+        val goal = intent.getIntExtra("goal", 5000)
+
+        viewModel.gameState.observe(this) { state ->
+            binding.txtMoney.text = "Dinero: ${state.currentMoney}"
+            binding.txtTurn.text = "Turno: ${state.currentTurn}"
+            binding.txtResult.text = state.result
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        // LÓGICA DEL BOTÓN BACK
+        binding.btnBack.setOnClickListener {
+            val intent = Intent(this, MetaActivity::class.java)
+            startActivity(intent)
+            finish() // Cierra el juego para no dejarlo en segundo plano
+        }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Taller2Theme {
-        Greeting("Android")
+        binding.btnAhorrar.setOnClickListener {
+            viewModel.action("ahorrar")
+        }
+
+        binding.btnInvertir.setOnClickListener {
+            viewModel.action("invertir")
+        }
+
+        binding.btnGastar.setOnClickListener {
+            viewModel.action("gastar")
+        }
+
+        binding.btnReset.setOnClickListener {
+            viewModel.resetGame()
+        }
     }
 }
