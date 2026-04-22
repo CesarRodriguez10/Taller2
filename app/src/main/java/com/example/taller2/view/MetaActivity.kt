@@ -3,6 +3,7 @@ package com.example.taller2.view
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.taller2.MainActivity
 import com.example.taller2.databinding.ActivityMetaBinding
 class MetaActivity : AppCompatActivity() {
 
