@@ -32,7 +32,6 @@ class LoginActivity : AppCompatActivity() {
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        // BOTÓN INICIAR SESIÓN
         binding.btnLogin.setOnClickListener {
             val email = binding.etUser.text.toString()
             val password = binding.etPass.text.toString()
@@ -44,13 +43,11 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // TEXTO REGÍSTRATE (CORREGIDO: Ahora abre la nueva pantalla)
         binding.tvRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
-        // BOTÓN GOOGLE
         binding.btnGoogle.setOnClickListener {
             val signInIntent = googleSignInClient.signInIntent
             startActivityForResult(signInIntent, RC_SIGN_IN)

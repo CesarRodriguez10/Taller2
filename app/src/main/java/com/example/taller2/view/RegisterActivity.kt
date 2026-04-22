@@ -35,7 +35,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.tvBackToLogin.setOnClickListener {
-            finish() // Cierra esta pantalla y vuelve al login
+            finish()
         }
     }
 
