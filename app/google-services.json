@@ -12,7 +12,20 @@
           "package_name": "com.example.taller2"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "412273011623-oq6mk7n1r43rr5n0r1v16v0i28spm36l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.taller2",
+            "certificate_hash": "087d879bf7b2dcc573e5af4cdc543d78c3c1ede8"
+          }
+        },
+        {
+          "client_id": "412273011623-idljh1rh9q7cepj49r2rmpncv7jk6qqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBVkYApLiJZ_6-I1wy9teBesqX_rrwUo7Q"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412273011623-idljh1rh9q7cepj49r2rmpncv7jk6qqf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
